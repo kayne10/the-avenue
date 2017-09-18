@@ -1,0 +1,34 @@
+html {
+  max-width: 1200px;
+  background: rgb(22, 54, 107);
+  color: white;
+  margin: 0 auto;
+}
+
+
+nav {
+  background: black;
+  color: white;
+  border: none;
+}
+
+/*  Carousel */
+.carousel-inner img {
+  margin: 0 auto;
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+footer {
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  height: 100px;
+}
+.social-media {
+  padding: 2em 2em;
+}
