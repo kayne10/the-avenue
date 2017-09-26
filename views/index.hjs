@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <!-- bootstrap cdn css -->
@@ -8,43 +9,90 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- jQuery is required for Bootsrtap JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js">
+
+    </script>
   </head>
   <body>
-    <!-- Navbar with subscribe button -->
-    <nav class="navbar navbar-default" id="cd-main-nav">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">{{ title }}</a>
+    <!-- <div class="collapse bg-inverse" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-4 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </div> -->
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">The Avenue</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      </div>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="/subscribe">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Subscribe
-              </a>
-            </li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+    <section class="jumbotron text-center">
+      <div class="container">
 
+      </div>
+    </section>
 
     <!-- Header with playlists container and jumbotron -->
-    <div class="row">
+    <div class="row" id="index-content">
       <div class="col-md-4">
         <div class="panel panel-default">
           <h1>Playlists</h1>
           <ul>
+            <li><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320376723&amp;color=ff9900&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
+            <li>Playlist 1</li>
+            <li>Playlist 2</li>
+            <li>Playlist 3</li>
+            <li>Playlist 4</li>
+            <li>Playlist 5</li>
             <li>Playlist 1</li>
             <li>Playlist 2</li>
             <li>Playlist 3</li>
@@ -144,10 +192,5 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
   </body>
 </html>
