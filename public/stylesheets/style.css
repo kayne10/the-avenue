@@ -15,7 +15,7 @@ html {
 }
 .jumbotron {
   background: url('/images/header.jpg') no-repeat center center;
-  height: 100vh;
+  height: 500px;
 }
 
 
@@ -25,7 +25,15 @@ html {
 }
 
 
-
+.action-wrapper {
+  background: black;
+  color: white;
+}
+.playlists {
+  color: black;
+  text-align: center;
+  padding: 2em 0;
+}
 
 /*  Carousel */
 .carousel-inner img {
@@ -52,8 +60,8 @@ footer {
 }
 
 
-@media (min-width: 1200px)
+/*@media (min-width: 1200px)
 bootstrap.min.css:6
 .container {
     max-width: 1140px;
-}
+}*/
