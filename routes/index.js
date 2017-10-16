@@ -14,6 +14,10 @@ router.get('/pop-culture', function(req, res, next) {
   res.render('PopCultureView', { title: 'The Warm Up' });
 });
 
+router.get('/features', function(req, res, next) {
+  res.render('FeaturesView', { title: 'The Warm Up' });
+});
+
 router.get('/music', function(req, res, next) {
   res.render('MusicView', { title: 'The Warm Up' });
 });
