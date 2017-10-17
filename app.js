@@ -4,8 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var config = require('./config/main');
+
+var dbUrl = config.database;
+
+// Use native Node promises
+mongoose.Promise = global.Promise;
+
+mongoose.connect(dbUrl, function(err, res){
+  if(err) {
+    console.log('DB CONNECTION FAILED: '+err);
+  }
+  else {
+    console.log('DB CONNECTION SUCCESS: '+dbUrl);
+  }
+})
 
 var index = require('./routes/index');
+var adminRoutes = require('./routes/admin');
+
 
 var app = express();
 
@@ -19,11 +38,19 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(passport.initialize());
 
+// load passport strategies
+const localSignupStrategy = require('./config/passport/local-signup');
+const localLoginStrategy = require('./config/passport/local-login');
+passport.use('local-signup', localSignupStrategy);
+passport.use('local-login', localLoginStrategy);
 
+// load static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/admin', adminRoutes);
 
 
 // catch 404 and forward to error handler

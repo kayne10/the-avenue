@@ -6,18 +6,18 @@ html {
 }
 
 .navbar-inverse {
-  background: transparent;
+  background: black;
   border: none;
 }
 
 .navbar-inverse .navbar-brand {
-  color: black;
+  color: white;
 }
 .navbar-inverse .navbar-brand:hover {
   color: orange;
 }
 .navbar-inverse .navbar-nav>li>a {
-  color: black;
+  color: white;
 }
 .navbar-inverse .navbar-nav>li>a:hover {
   color: orange;
