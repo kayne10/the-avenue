@@ -30,12 +30,17 @@ html {
 .jumbotron {
   background: url('/images/header.jpg') no-repeat center center;
   height: 500px;
+  margin-top: 1.5em;
 }
 
 
 .panel-default {
   overflow-y: scroll;
-  height: 400px;
+  height: auto;
+  max-height: 400px;
+  padding: 0 40px;
+  background-color: black;
+  border: none;
 }
 
 

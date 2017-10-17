@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var bcrypt = require('bcryptjs')
 
 var ProfileSchema = new mongoose.Schema({
-  name: {type: String, trim:true, default: ''},
+  // name: {type: String, trim:true, default: ''},
   email: {type: String, trim:true, default: ''},
   password: {type: String, default: ''},
   timestamp: {type: Date, default: Date.now}

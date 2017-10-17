@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
 var config = require('./config/main');
 
 var dbUrl = config.database;
@@ -38,7 +40,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'hhsssaaddjklsdf97sasert43g',
+  saveUninitialized: true,
+	resave: true
+}));
+app.use(flash());
 app.use(passport.initialize());
+app.use(passport.session());
 
 // load passport strategies
 const localSignupStrategy = require('./config/passport/local-signup');
