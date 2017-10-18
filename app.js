@@ -8,8 +8,10 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
-var config = require('./config/main');
+var validator = require('express-validator');
 
+// Load config files
+var config = require('./config/main');
 var dbUrl = config.database;
 
 // Use native Node promises
@@ -23,6 +25,8 @@ mongoose.connect(dbUrl, function(err, res){
     console.log('DB CONNECTION SUCCESS: '+dbUrl);
   }
 })
+//Load passport middleware
+require('./config/passport');
 
 var index = require('./routes/index');
 var adminRoutes = require('./routes/admin');
@@ -40,6 +44,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(validator());
 app.use(session({
   secret: 'hhsssaaddjklsdf97sasert43g',
   saveUninitialized: true,
@@ -50,10 +55,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // load passport strategies
-const localSignupStrategy = require('./config/passport/local-signup');
-const localLoginStrategy = require('./config/passport/local-login');
-passport.use('local-signup', localSignupStrategy);
-passport.use('local-login', localLoginStrategy);
+// const localSignupStrategy = require('./config/passport/local-signup');
+// const localLoginStrategy = require('./config/passport/local-login');
+// passport.use('local-signup', localSignupStrategy);
+// passport.use('local-login', localLoginStrategy);
 
 // load static files
 app.use(express.static(path.join(__dirname, 'public')));
