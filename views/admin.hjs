@@ -4,8 +4,103 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <!-- bootstrap cdn css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- jQuery is required for Bootsrtap JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js">
+
+    </script>
   </head>
   <body>
-    <h1>Welcome Admin</h1>
+    <!-- Header -->
+    <div class="page-header">
+      <h1>Welcome Admin <small>
+        {{#info}}
+          {{info}}
+        {{/info}}
+        {{^info}}
+          How is your day going?
+        {{/info}}
+      </small></h1>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="row">
+      <!-- Side Navigation for Admin actions -->
+      <div class="col-md-3 col-lg-3 col-sm-9 side-nav-fixed">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+             Add Podcast</a>
+          </li>
+          <li role="presentation"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            Add Article</a>
+          </li>
+          <li role="presentation"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+            Add Features</a>
+          </li>
+          <li role="presentation"><a href="#">
+            Profile</a>
+          </li>
+          <li role="presentation"><a href="#">
+            Messages</a>
+          </li>
+          <li role="presentation"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>
+            Home</a>
+          </li>
+          <li role="presentation"><a href="/admin/logout"><i class="fa fa-power-off" aria-hidden="true"></i>
+            Logout</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-9 manager">
+        <!-- SWITCH OR IF STATEMENT -->
+        <h1>Dashboard</h1>
+        <!-- Display Tables -->
+        <section class="podcasts">
+          <h2>Podcasts</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date Posted</th>
+              </tr>
+            </thead>
+          </table>
+        </section>
+        <section class="articles">
+          <h2>Articles</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date Posted</th>
+              </tr>
+            </thead>
+          </table>
+        </section>
+        <section class="podcasts">
+          <h2>Podcasts</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date Posted</th>
+              </tr>
+            </thead>
+          </table>
+        </section>
+      </div>
+    </div>
+
+
   </body>
 </html>

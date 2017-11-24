@@ -1,8 +1,12 @@
 html {
   max-width: 1280px;
-  background: rgb(0, 0, 0);
+  background: rgba(0,0,0,1);
   color: white;
   margin: 0 auto;
+}
+
+body {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-inverse {
@@ -80,6 +84,22 @@ footer {
 .social-media a {
   text-decoration: none;
 }
+
+
+/* Admin Styling */
+.page-header {
+  color: white;
+}
+
+.manager {
+  overflow-y: scroll;
+  height: auto;
+}
+
+/*.side-nav-fixed {
+  position: fixed;
+  height: auto;
+}*/
 
 
 /*@media (min-width: 1200px)
