@@ -2,16 +2,36 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var flash = require('connect-flash');
+var mongoose = require('mongoose');
+var Article = require('../models/Article');
 
 
 // Get main admin dashboard
 router.get('/', checkAuthentication,function(req, res, next) {
-  res.render('admin', { title: 'The Warm Up' });
+  Article.find({}, function(err, articles) {
+    if (err) {throw err}
+    res.render('admin', {
+      title: 'The Warm Up - Admin Center',
+      articles: articles
+    });
+  });
 });
 
 // API controller actions
-
-
+router.get('/article/new', checkAuthentication,function(req, res, next){
+  res.render('NewArticle', {title: 'The Warm Up - New Article'});
+});
+router.post('/article/new', checkAuthentication,function(req, res, next){
+  const newArticle = new Article({
+    title: req.body.title,
+    author: req.body.author,
+    category: req.body.category,
+    content: req.body.content,
+    dateSent: Date.now()
+  })
+  newArticle.save();
+  res.json(newArticle);
+});
 
 // LOGIM AND SIGNUP AUTH
 router.get('/login', function(req, res, next){

@@ -32,20 +32,8 @@
       <!-- Side Navigation for Admin actions -->
       <div class="col-md-3 col-lg-3 col-sm-9 side-nav-fixed">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>
-             Add Podcast</a>
-          </li>
-          <li role="presentation"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>
-            Add Article</a>
-          </li>
-          <li role="presentation"><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>
-            Add Features</a>
-          </li>
-          <li role="presentation"><a href="#">
-            Profile</a>
-          </li>
-          <li role="presentation"><a href="#">
-            Messages</a>
+          <li role="presentation"><a href="/admin/article/new"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+             Add Blog Article</a>
           </li>
           <li role="presentation"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>
             Home</a>
@@ -56,22 +44,7 @@
         </ul>
       </div>
       <div class="col-md-9 col-lg-9 col-sm-9 manager">
-        <!-- SWITCH OR IF STATEMENT -->
-        <h1>Dashboard</h1>
-        <!-- Display Tables -->
-        <section class="podcasts">
-          <h2>Podcasts</h2>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Author</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Date Posted</th>
-              </tr>
-            </thead>
-          </table>
-        </section>
+        <!-- Display Table -->
         <section class="articles">
           <h2>Articles</h2>
           <table class="table">
@@ -81,21 +54,20 @@
                 <th>Title</th>
                 <th>Category</th>
                 <th>Date Posted</th>
+                <th>Delete</th>
               </tr>
             </thead>
-          </table>
-        </section>
-        <section class="podcasts">
-          <h2>Podcasts</h2>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Author</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Date Posted</th>
-              </tr>
-            </thead>
+            <tbody>
+              {{#articles}}
+                <tr>
+                  <td>{{author}}</td>
+                  <td>{{title}}</td>
+                  <td>{{category}}</td>
+                  <td>{{dateSent}}</td>
+                  <td><a href="/admin/article/delete/{{_id}}">Delete</a></td>
+                </tr>
+              {{/articles}}
+            </tbody>
           </table>
         </section>
       </div>

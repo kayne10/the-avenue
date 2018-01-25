@@ -58,6 +58,15 @@ body {
   padding: 2em 0;
 }
 
+.intro {
+  color: white;
+  padding: 1em 1em;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
 /*  Carousel */
 .carousel-inner img {
   margin: 0 auto;
@@ -94,6 +103,23 @@ footer {
 .manager {
   overflow-y: scroll;
   height: auto;
+}
+
+.table {
+  color: white;
+}
+tr {
+  height: 2em;
+}
+
+@@media screen and (max-width: 699px) {
+  .container {
+    max-width: 100%;
+  }
+  .intro {
+    width: 90%;
+    font-size: 1em;
+  }
 }
 
 /*.side-nav-fixed {

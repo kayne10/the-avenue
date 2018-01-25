@@ -24,23 +24,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">{{title}}</a>
+          <a class="navbar-brand" href="/">The Warm Up</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a class="links" href="/podcasts">Podcastst</a></li>
-              <li><a class="links" href="/pop-culture">Pop Culture</a></li>
-              <li><a class="links" href="/features">Features</a></li>
-              <li><a class="links" href="/music">Music</a></li>
+              <li><a class="links" href="/episodes">Episodes</a></li>
+              <li><a class="links" href="/blog">Blog</a></li>
+              <li><a class="links" href="/multimedia">Multimedia</a></li>
+              <!-- <li><a class="links" href="/music">Music</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/subscribe">Subscribe</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -52,13 +52,13 @@
       </div>
     </section>
 
+    <div class="row">
+      <div class="intro">
+        <p>The Warm Up Podcast is an emerging hub for pop culture and everything that surrounds the world of sports, but has nothing to do with box scores, top 10 highlights or long-winded analytics. Enjoy our discussions with a diverse set of guests -- from friends to colleagues to industry culture pushers -- through the eyes of three recent college graduates and professionals.</p>
+      </div>
+    </div>
     <!-- Header with playlists container and jumbotron -->
     <div class="row action-wrapper" id="index-content">
-      <div class="col-md-5 playlists">
-        <div class="panel panel-default">
-          <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/163983001&amp;color=%23ff9900&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-        </div>
-      </div>
       <div class="col-md-7">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -107,30 +107,15 @@
           </a>
         </div>
       </div>
+      <div class="col-md-5 playlists">
+        <div class="panel panel-default">
+          <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/163983001&amp;color=%23ff9900&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        </div>
+      </div>
     </div>
 
 
     <!-- Info section -->
-    <div class="row">
-      <div class="col-md-4">
-        <h1>Info</h1>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
-      <div class="col-md-4">
-        <h1>Info</h1>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
-      <div class="col-md-4">
-        <h1>Info</h1>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
-    </div>
     <!-- Podcast container -->
 
     <!-- Footer with social media links and admin sign in -->

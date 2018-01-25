@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <!-- bootstrap cdn css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- jQuery is required for Bootsrtap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js">
+
+  </script>
+</head>
+  <body>
+    <!-- Header -->
+    <div class="page-header">
+      <h1>Welcome Admin <small>
+        {{#info}}
+          {{info}}
+        {{/info}}
+        {{^info}}
+          New Article
+        {{/info}}
+      </small></h1>
+    </div>
+
+    <!-- FORM -->
+    <form class="" action="/admin/article/new" method="post">
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Hayden or Mason?">
+      </div>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" class="form-control" id="category" name="category" placeholder="Enter Category">
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="content" rows="10" placeholder="What is on your mind?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Article</button>
+    </form>
+
+  </body>
+</html>

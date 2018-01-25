@@ -6,24 +6,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'The Warm Up' });
 });
 
-router.get('/podcasts', function(req, res, next) {
-  res.render('PodcastsView', { title: 'The Warm Up' });
+router.get('/episodes', function(req, res, next) {
+  res.render('EpisodesView', { title: 'The Warm Up - Episodes' });
 });
 
-router.get('/pop-culture', function(req, res, next) {
-  res.render('PopCultureView', { title: 'The Warm Up' });
+router.get('/blog', function(req, res, next) {
+  res.render('BlogView', { title: 'The Warm Up - Blog' });
 });
 
-router.get('/features', function(req, res, next) {
-  res.render('FeaturesView', { title: 'The Warm Up' });
+router.get('/multimedia', function(req, res, next) {
+  res.render('MultimediaView', { title: 'The Warm Up - Multimedia' });
 });
 
-router.get('/music', function(req, res, next) {
-  res.render('MusicView', { title: 'The Warm Up' });
-});
-
-router.get('/about', function(req, res, next) {
-  res.render('AboutView', { title: 'The Warm Up' });
-});
 
 module.exports = router;
