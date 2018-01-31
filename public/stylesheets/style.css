@@ -34,7 +34,7 @@ body {
 .jumbotron {
   background: url('/images/header.jpg') no-repeat center center;
   height: 500px;
-  margin-top: 1.5em;
+  margin-top: -1.5em;
 }
 
 
@@ -76,6 +76,10 @@ body {
 }
 
 
+.blog-header {
+  margin-top: 5em;
+}
+
 
 
 
@@ -112,13 +116,13 @@ tr {
   height: 2em;
 }
 
-@@media screen and (max-width: 699px) {
-  .container {
-    max-width: 100%;
+@media screen and (max-width: 767px) {
+  .jumbotron {
+    background-image: url('../images/logoWOrange.jpg');
   }
   .intro {
     width: 90%;
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 

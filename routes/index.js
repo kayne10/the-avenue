@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Article = require('../models/Article');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,7 +12,12 @@ router.get('/episodes', function(req, res, next) {
 });
 
 router.get('/blog', function(req, res, next) {
-  res.render('BlogView', { title: 'The Warm Up - Blog' });
+  Article.find({}, function(err, data){
+    if (err) {
+      throw err;
+    }
+    res.render('BlogView', { title: 'The Warm Up - Blog', articles: data });
+  });
 });
 
 router.get('/multimedia', function(req, res, next) {

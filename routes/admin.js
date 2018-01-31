@@ -4,6 +4,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var mongoose = require('mongoose');
 var Article = require('../models/Article');
+var controller = require('../controllers/ArticleController');
 
 
 // Get main admin dashboard
@@ -30,7 +31,43 @@ router.post('/article/new', checkAuthentication,function(req, res, next){
     dateSent: Date.now()
   })
   newArticle.save();
-  res.json(newArticle);
+  res.redirect('/admin');
+});
+
+// DOES NOT RENDER ARTICLE OBJECT TO CLIENT
+router.get('/article/update/:id', checkAuthentication,function(req, res, next){
+  const articleId = req.params.id;
+  Article.findById(articleId, function(err, data){
+    if (err) {
+      throw err;
+    }
+    res.render('EditArticle', {article:data});
+  });
+});
+// DOES NOT WORK
+router.post('/article/update/:id', checkAuthentication,function(req, res, next){
+  const articleId = req.params.id;
+  controller.update(articleId, req.body)
+    .then(function(result) {
+      res.redirect('/admin');
+    })
+    .catch(function(err){
+      res.json({
+        confirmation: 'FAIL',
+        message: err
+      })
+    })
+});
+
+router.get('/article/delete/:id', checkAuthentication,function(req, res, next){
+  const articleId = req.params.id;
+  Article.deleteOne({ _id: articleId}, function(err){
+    if (!err) {
+      res.redirect('/admin');
+    } else {
+      res.send({'error':'Article did not delete'});
+    }
+  });
 });
 
 // LOGIM AND SIGNUP AUTH

@@ -54,7 +54,7 @@
                 <th>Title</th>
                 <th>Category</th>
                 <th>Date Posted</th>
-                <th>Delete</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -64,7 +64,9 @@
                   <td>{{title}}</td>
                   <td>{{category}}</td>
                   <td>{{dateSent}}</td>
-                  <td><a href="/admin/article/delete/{{_id}}">Delete</a></td>
+                  <td><a href="/admin/article/update/{{_id}}"><button class="btn btn-primary">Edit</button></a>
+                    <a href="/admin/article/delete/{{_id}}"><button class="btn btn-danger">Delete</button></a>
+                  </td>
                 </tr>
               {{/articles}}
             </tbody>
