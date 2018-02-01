@@ -6,6 +6,7 @@
     <!-- bootstrap cdn css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Oswald" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <!-- jQuery is required for Bootsrtap JS -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -47,22 +48,29 @@
     </nav>
 
     <!-- BLOG HEADER -->
-    <div class="blog-header">
-      <h1>Blog</h1>
-    </div>
+    <section class="jumbotron text-center">
+      <div class="container">
+
+      </div>
+    </section>
 
 
     <!-- Display Articles in a nice format -->
     <div class="container">
-      {{#articles}}
-        <div class="row">
-          <a href="#"><h2>{{title}}</h2></a>
-          <h4>By {{author}}</h4>
-          <hr>
-          <h5>{{category}}</h5>
-          <p>{{dateSent}}</p>
-        </div>
-      {{/articles}}
+      <div class="blog-wrapper">
+        <h1 style="text-align:center;">Blog</h1>
+        {{#articles}}
+          <div class="row">
+            <div class="article">
+              <a href="/blog/{{title}}"><h2>{{title}}</h2></a>
+              <h4>By {{author}}</h4>
+              <h5>Category: {{category}}</h5>
+              <p>Posted at {{dateSent}}</p>
+            </div>
+            <hr>
+          </div>
+        {{/articles}}
+      </div>
     </div>
 
     <!-- Footer with social media links and admin sign in -->

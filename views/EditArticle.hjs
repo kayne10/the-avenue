@@ -7,6 +7,7 @@
   <!-- bootstrap cdn css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Oswald" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <!-- jQuery is required for Bootsrtap JS -->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -30,7 +31,7 @@
 
     <!-- FORM -->
 
-    <form action="/admin/article/update/{{article._id}}" method="post">
+    <form class="form-wrapper" action="/admin/article/update/{{article._id}}" method="post">
       <div class="form-group">
         <label for="author">Author</label>
         <input type="text" class="form-control" id="author" name="author" placeholder="Hayden or Mason?" value="{{ article.author }}">

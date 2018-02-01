@@ -20,6 +20,16 @@ router.get('/blog', function(req, res, next) {
   });
 });
 
+router.get('/blog/:title', function(req, res, next) {
+  const articleTitle = req.params.title;
+  Article.findOne({title: articleTitle}, function(err, data){
+    if (err) {
+      throw err;
+    }
+    res.render('BlogArticleView', {article: data})
+  });
+});
+
 router.get('/multimedia', function(req, res, next) {
   res.render('MultimediaView', { title: 'The Warm Up - Multimedia' });
 });
