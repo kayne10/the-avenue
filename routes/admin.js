@@ -23,12 +23,13 @@ router.get('/article/new', checkAuthentication,function(req, res, next){
   res.render('NewArticle', {title: 'The Warm Up - New Article'});
 });
 router.post('/article/new', checkAuthentication,function(req, res, next){
+  const now = Date.now();
   const newArticle = new Article({
     title: req.body.title,
     author: req.body.author,
     category: req.body.category,
     content: req.body.content,
-    dateSent: Date.now()
+    dateSent: new Date(now).toLocaleDateString()
   })
   newArticle.save();
   res.redirect('/admin');

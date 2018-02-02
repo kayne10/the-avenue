@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
-    <!-- bootstrap cdn css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Oswald" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <!-- jQuery is required for Bootsrtap JS -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/javascripts/bootstrap.min.js">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <!-- bootstrap cdn css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Oswald" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- jQuery is required for Bootsrtap JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js">
 
-    </script>
-  </head>
+  </script>
+</head>
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top" id="cd-main-nav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,18 +47,41 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <!-- Article Content -->
     <div class="container">
-      <div class="wrapper">
-        <h1>{{article.title}}</h1><br>
-        <span>By {{article.author}}</span><br>
-        <span>Category: <span class="category-tags">{{article.category}}</span></span><br>
-        <span>Posted at {{article.dateSent}}</span><br>
-        <p>{{article.content}}</p>
+      <div class="episodes-container">
+        <h1>Multimedia</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Videos</h3>
+            <ul>
+              <li>Video 1</li>
+              <li>Video 2</li>
+              <li>Video 3</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Pictures</h3>
+            <ul>
+              <li>Picure 1</li>
+              <li>Picure 1</li>
+              <li>Picure 1</li>
+              <li>Picure 1</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>External Links</h3>
+            <ul>
+              <li><a href="#">fasfasdf</a></li>
+              <li><a href="#">fasfasdf</a></li>
+              <li><a href="#">fasfasdf</a></li>
+              <li><a href="#">fasfasdf</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div id="disqus_thread"></div>
     </div>
+
+
     <!-- Footer with social media links and admin sign in -->
     <footer>
       <div class="row">
@@ -78,24 +100,5 @@
       </div>
     </footer>
 
-    <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://localhost-3000-18.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </body>
 </html>

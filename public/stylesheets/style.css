@@ -47,7 +47,7 @@ label {
 
 
 .panel-default {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   height: auto;
   max-height: 400px;
   padding: 0 40px;
@@ -59,10 +59,16 @@ label {
 .action-wrapper {
   background: black;
   color: white;
+  margin-top: -2em;
 }
 .playlists {
   color: black;
   text-align: center;
+  background-color: orange;
+  padding: 2em 1em;
+  /* padding: 2em 0; */
+}
+.my-carousel {
   padding: 2em 0;
 }
 
@@ -76,6 +82,13 @@ label {
   font-family: 'Oswald', sans-serif;
 }
 
+.info-section {
+  background-color: lightgrey;
+  padding: 2em 1em;
+}
+.info-section p {
+  color: black;
+}
 /*  Carousel */
 .carousel-inner img {
   margin: 0 auto;
@@ -95,9 +108,21 @@ label {
   height: auto;
   margin: 0 auto;
 }
+
 .wrapper {
   white-space: pre-wrap;
-  color: white;
+  color: black;
+  background-color: lightgrey;
+  border: white 2px solid;
+  border-radius: 10px;
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+
+.category-tags {
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 10px 10px;
 }
 
 .auth-wrapper {
@@ -118,12 +143,17 @@ footer {
   text-align: center;
   margin: 0 auto;
   height: 100px;
+  padding: 1.5em 1.5em;
 }
 .social-media {
+  width: 60%;
+  margin: 0 auto;
   padding: 2em 2em;
+  justify-content: space-between;
 }
 .social-media a {
   text-decoration: none;
+  font-size: 26px;
 }
 
 
@@ -154,6 +184,14 @@ footer {
 }
 tr {
   height: 2em;
+}
+
+#disqus_thread {
+  background-color: lightgrey;
+  color: black;
+  padding: 2em 2em;
+  border: white 2px solid;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 767px) {
