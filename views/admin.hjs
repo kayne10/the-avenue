@@ -47,7 +47,7 @@
       <div class="col-md-9 col-lg-9 col-sm-9 manager">
         <!-- Display Table -->
         <section class="articles">
-          <h2>Articles</h2>
+          <h2>Blog Articles</h2>
           <table class="table">
             <thead>
               <tr>
@@ -73,6 +73,54 @@
             </tbody>
           </table>
         </section>
+        <div class="row">
+          <section class="uploads">
+            <div class="col-md-6 multimedia">
+              <h2>Multimedia Uploads</h2>
+              <!-- form for uploads -->
+              <form class="file-upload" action="/admin/muli/file" method="post" enctype="multipart/form-data">
+                <input type="file" name="" value="">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <!-- list of uploads and actions -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>File</th>
+                    <th>Actions</th>
+                  </tr>
+                  <tbody>
+                    <td>dummy.jpg</td>
+                    <td><a href="#"><button class="btn btn-primary">Edit</button></a>
+                      <a href="#"><button class="btn btn-danger">Delete</button></a>
+                    </td>
+                  </tbody>
+                </thead>
+              </table>
+            </div>
+            <div class="col-md-6 home-slider">
+              <h2>Home Page Image Slider</h2>
+              <form class="file-upload" action="/admin/home/file" method="post" enctype="multipart/form-data">
+                <input type="file" name="homeImg" value="">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>File</th>
+                    <th>Actions</th>
+                  </tr>
+                  <tbody>
+                    <td>dummy.jpg</td>
+                    <td><a href="#"><button class="btn btn-primary">Edit</button></a>
+                      <a href="#"><button class="btn btn-danger">Delete</button></a>
+                    </td>
+                  </tbody>
+                </thead>
+              </table>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
 

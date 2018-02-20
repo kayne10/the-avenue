@@ -3,7 +3,16 @@ var router = express.Router();
 var passport = require('passport');
 var flash = require('connect-flash');
 var mongoose = require('mongoose');
+var multer = require('multer');
+var path = require('path');
+var UPLOAD_PATH = path.resolve(__dirname, '../public/images')
+var upload = multer({
+  dest: 'images/',
+  limits: {fileSize: 1000000, files: 5}
+})
+
 var Article = require('../models/Article');
+var Upload = require('../models/Upload');
 var controller = require('../controllers/ArticleController');
 
 
@@ -11,9 +20,14 @@ var controller = require('../controllers/ArticleController');
 router.get('/', checkAuthentication,function(req, res, next) {
   Article.find({}, function(err, articles) {
     if (err) {throw err}
-    res.render('admin', {
-      title: 'The Warm Up - Admin Center',
-      articles: articles
+
+    Upload.find({}, function(err, images){
+      if (err) {throw err}
+      res.render('admin', {
+        title: 'The Warm Up - Admin Center',
+        articles: articles,
+        images: images
+      });
     });
   });
 });
@@ -22,20 +36,29 @@ router.get('/', checkAuthentication,function(req, res, next) {
 router.get('/article/new', checkAuthentication,function(req, res, next){
   res.render('NewArticle', {title: 'The Warm Up - New Article'});
 });
-router.post('/article/new', checkAuthentication,function(req, res, next){
+
+// new blog post
+router.post('/article/new', checkAuthentication, upload.any(),function(req, res, next){
   const now = Date.now();
+  const image = req.files.map((file) => {
+    return {
+      imgPath: file.path
+    }
+  })
+  console.log(image);
   const newArticle = new Article({
     title: req.body.title,
     author: req.body.author,
     category: req.body.category,
     content: req.body.content,
+    imgPath: image.imgPath,
     dateSent: new Date(now).toLocaleDateString()
   })
   newArticle.save();
   res.redirect('/admin');
 });
 
-// DOES NOT RENDER ARTICLE OBJECT TO CLIENT
+// view post by ID for update request
 router.get('/article/update/:id', checkAuthentication,function(req, res, next){
   const articleId = req.params.id;
   Article.findById(articleId, function(err, data){
@@ -45,7 +68,8 @@ router.get('/article/update/:id', checkAuthentication,function(req, res, next){
     res.render('EditArticle', {article:data});
   });
 });
-// DOES NOT WORK
+
+// blog POST update
 router.post('/article/update/:id', checkAuthentication,function(req, res, next){
   const articleId = req.params.id;
   controller.update(articleId, req.body)
@@ -60,6 +84,7 @@ router.post('/article/update/:id', checkAuthentication,function(req, res, next){
     })
 });
 
+// delete blog post by ID
 router.get('/article/delete/:id', checkAuthentication,function(req, res, next){
   const articleId = req.params.id;
   Article.deleteOne({ _id: articleId}, function(err){
@@ -69,6 +94,21 @@ router.get('/article/delete/:id', checkAuthentication,function(req, res, next){
       res.send({'error':'Article did not delete'});
     }
   });
+});
+
+//upload home img
+router.post('/home/file', checkAuthentication, upload.any(),function(req, res, next){
+  const images = req.files.map((file) => {
+    return {
+      filename: file.filename,
+      originalname: file.originalname,
+      path: file.path
+    }
+  })
+  Upload.insertMany(images, (err, result) => {
+    if (err) return res.sendStatus(404)
+    res.json(result)
+  })
 });
 
 // LOGIM AND SIGNUP AUTH

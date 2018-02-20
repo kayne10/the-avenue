@@ -185,6 +185,21 @@ footer {
 tr {
   height: 2em;
 }
+.articles {
+  overflow-y: scroll;
+  max-height: 400px;
+}
+.home-slider {
+  overflow-y: scroll;
+  max-height: 400px;
+}
+.multimedia {
+  overflow-y: scroll;
+  max-height: 400px;
+}
+.file-upload {
+  display: flex;
+}
 
 #disqus_thread {
   background-color: lightgrey;

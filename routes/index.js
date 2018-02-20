@@ -1,10 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var Article = require('../models/Article');
+var Upload = require('../models/Upload');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'The Warm Up' });
+  Upload.find({}, function(err, images){
+    if (err) {throw err}
+    res.render('index', {
+      title: 'The Warm Up',
+      images: images
+    });
+  });
 });
 
 router.get('/episodes', function(req, res, next) {

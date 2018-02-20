@@ -29,7 +29,7 @@
     </div>
 
     <!-- FORM -->
-    <form class="form-wrapper" action="/admin/article/new" method="post">
+    <form class="form-wrapper" action="/admin/article/new" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="author">Author</label>
         <input type="text" class="form-control" id="author" name="author" placeholder="Hayden or Mason?">
@@ -41,6 +41,10 @@
       <div class="form-group">
         <label for="category">Category</label>
         <input type="text" class="form-control" id="category" name="category" placeholder="Enter Category">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control" id="image" name="image" placeholder="Upload Image">
       </div>
       <div class="form-group">
         <label for="content">Content</label>
