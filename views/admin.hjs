@@ -54,6 +54,7 @@
                 <th>Author</th>
                 <th>Title</th>
                 <th>Category</th>
+                <th>Picture</th>
                 <th>Date Posted</th>
                 <th>Actions</th>
               </tr>
@@ -64,6 +65,7 @@
                   <td>{{author}}</td>
                   <td>{{title}}</td>
                   <td>{{category}}</td>
+                  <td>{{imgOGName}}</td>
                   <td>{{dateSent}}</td>
                   <td><a href="/admin/article/update/{{_id}}"><button class="btn btn-primary">Edit</button></a>
                     <a href="/admin/article/delete/{{_id}}"><button class="btn btn-danger">Delete</button></a>
@@ -78,8 +80,8 @@
             <div class="col-md-6 multimedia">
               <h2>Multimedia Uploads</h2>
               <!-- form for uploads -->
-              <form class="file-upload" action="/admin/muli/file" method="post" enctype="multipart/form-data">
-                <input type="file" name="" value="">
+              <form class="file-upload" action="/multimedia/img" method="post" enctype="multipart/form-data">
+                <input type="file" name="multimediaImg">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
               <!-- list of uploads and actions -->
@@ -90,18 +92,22 @@
                     <th>Actions</th>
                   </tr>
                   <tbody>
-                    <td>dummy.jpg</td>
-                    <td><a href="#"><button class="btn btn-primary">Edit</button></a>
-                      <a href="#"><button class="btn btn-danger">Delete</button></a>
-                    </td>
+                    {{#mmImgs}}
+                    <tr>
+                      <td>{{originalname}}</td>
+                      <td>
+                        <a href="#"><button class="btn btn-danger">Delete</button></a>
+                      </td>
+                    </tr>
+                    {{/mmImgs}}
                   </tbody>
                 </thead>
               </table>
             </div>
             <div class="col-md-6 home-slider">
               <h2>Home Page Image Slider</h2>
-              <form class="file-upload" action="/admin/home/file" method="post" enctype="multipart/form-data">
-                <input type="file" name="homeImg" value="">
+              <form class="file-upload" action="/home/img" method="post" enctype="multipart/form-data">
+                <input type="file" name="homeImg">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
               <table class="table">
@@ -111,10 +117,14 @@
                     <th>Actions</th>
                   </tr>
                   <tbody>
-                    <td>dummy.jpg</td>
-                    <td><a href="#"><button class="btn btn-primary">Edit</button></a>
-                      <a href="#"><button class="btn btn-danger">Delete</button></a>
-                    </td>
+                    {{#homeImgs}}
+                    <tr>
+                      <td>{{originalname}}</td>
+                      <td>
+                        <a href="#"><button class="btn btn-danger">Delete</button></a>
+                      </td>
+                    </tr>
+                    {{/homeImgs}}
                   </tbody>
                 </thead>
               </table>

@@ -5,7 +5,9 @@ const articleSchema = new mongoose.Schema({
   author: String,
   category: String,
   content: String,
-  imgPath: String, 
+  imgFileName: String,
+  imgOGName: String,
+  imgPath: String,
   dateSent: {type: Date, default:Date.now()}
 });
 

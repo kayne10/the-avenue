@@ -62,23 +62,25 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="0"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <!-- Not working -->
+          <!-- Try making your own instead of bootstrap. Captions can include title, author, and category -->
           <div class="carousel-inner">
-          {{#images}}
+
             <div class="carousel-inner">
               <div class="item active">
-                <img src="{{path}}" alt="">
+                <img src="/images/{{images[0].filename}}" alt="">
               </div>
-          {{/images}}
-          </div>
+            </div>
 
           </div>
+
+        </div>
 
           <!-- Left and right controls -->
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -99,10 +101,6 @@
       <div class="intro">
         <div class="col-md-6">
           <p>The Warm Up Podcast is an emerging hub for pop culture and everything that surrounds the world of sports, but has nothing to do with box scores, top 10 highlights or long-winded analytics.</p>
-          {{#images}}
-            <h3>Path: {{path}}</h3>
-            <img src="{{path}}" alt="test">
-          {{/images}}
         </div>
         <div class="col-md-6">
           <p>Enjoy our discussions with a diverse set of guests -- from friends to colleagues to industry culture pushers -- through the eyes of three recent college graduates and professionals</p>

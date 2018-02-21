@@ -56,12 +56,14 @@
 
 
     <!-- Display Articles in a nice format -->
+    <!-- CARDS OR LIST????? -->
     <div class="container">
       <div class="blog-wrapper">
         <h1 style="text-align:center;">Blog</h1>
         {{#articles}}
           <div class="row">
             <div class="article">
+              <img src="/images/{{imgFileName}}" class="img-responsive" width="200px" alt="">
               <a href="/blog/{{title}}"><h2>{{title}}</h2></a>
               <h4>By {{author}}</h4>
               <h5>Category: {{category}}</h5>

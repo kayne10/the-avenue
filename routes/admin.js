@@ -5,11 +5,22 @@ var flash = require('connect-flash');
 var mongoose = require('mongoose');
 var multer = require('multer');
 var path = require('path');
-var UPLOAD_PATH = path.resolve(__dirname, '../public/images')
-var upload = multer({
-  dest: 'images/',
-  limits: {fileSize: 1000000, files: 5}
-})
+var fs = require('fs');
+var Grid = require("gridfs-stream");
+var conn = mongoose.connection;
+Grid.mongo = mongoose.mongo;
+var gfs;
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+  }
+});
+
+var upload = multer({ storage: storage }).single('blogImg');
 
 var Article = require('../models/Article');
 var Upload = require('../models/Upload');
@@ -23,10 +34,20 @@ router.get('/', checkAuthentication,function(req, res, next) {
 
     Upload.find({}, function(err, images){
       if (err) {throw err}
+      var mmImgs = [];
+      var homeImgs = [];
+      for (var i=0; i < images.length; i++){
+        if(images[i].filename.includes('multi')) {
+          mmImgs.push(images[i]);
+        } else {
+          homeImgs.push(images[i]);
+        }
+      }
       res.render('admin', {
         title: 'The Warm Up - Admin Center',
         articles: articles,
-        images: images
+        homeImgs: homeImgs,
+        mmImgs: mmImgs
       });
     });
   });
@@ -38,24 +59,24 @@ router.get('/article/new', checkAuthentication,function(req, res, next){
 });
 
 // new blog post
-router.post('/article/new', checkAuthentication, upload.any(),function(req, res, next){
-  const now = Date.now();
-  const image = req.files.map((file) => {
-    return {
-      imgPath: file.path
+// Not saving file to disk correctly!!!!!!
+router.post('/article/new', checkAuthentication,function(req, res){
+  upload(req, res, function(err) {
+    if (err) {
+       return err;
     }
-  })
-  console.log(image);
-  const newArticle = new Article({
-    title: req.body.title,
-    author: req.body.author,
-    category: req.body.category,
-    content: req.body.content,
-    imgPath: image.imgPath,
-    dateSent: new Date(now).toLocaleDateString()
-  })
-  newArticle.save();
-  res.redirect('/admin');
+    console.log(req.file);
+    var newArticle = new Article();
+    newArticle.title = req.body.title;
+    newArticle.author = req.body.author;
+    newArticle.category = req.body.category;
+    newArticle.imgPath = req.file.path;
+    newArticle.imgFileName = req.file.filename;
+    newArticle.imgOGName = req.file.originalname;
+    newArticle.content = req.body.content;
+    newArticle.save();
+    res.redirect('/admin');
+  });
 });
 
 // view post by ID for update request
@@ -97,18 +118,20 @@ router.get('/article/delete/:id', checkAuthentication,function(req, res, next){
 });
 
 //upload home img
-router.post('/home/file', checkAuthentication, upload.any(),function(req, res, next){
-  const images = req.files.map((file) => {
-    return {
-      filename: file.filename,
-      originalname: file.originalname,
-      path: file.path
-    }
-  })
-  Upload.insertMany(images, (err, result) => {
-    if (err) return res.sendStatus(404)
-    res.json(result)
-  })
+router.post('/home/img', function(req, res){
+  upload(req, res, function(err) {
+    if (err) {throw err}
+    var newImg = new Upload();
+    newImg.filename = req.file.filename;
+    newImg.originalname = req.file.originalname;
+    newImg.path = req.file.path;
+    newImg.save();
+    res.json({
+      user: req.user,
+      uploadedFile: req.file,
+      savedFile: newImg
+    });
+  });
 });
 
 // LOGIM AND SIGNUP AUTH

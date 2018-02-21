@@ -30,6 +30,8 @@ require('./config/passport');
 
 var index = require('./routes/index');
 var adminRoutes = require('./routes/admin');
+var postHomeImg = require('./routes/homeImg');
+var postMultiImg = require('./routes/multimediaImg');
 
 
 var app = express();
@@ -65,6 +67,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/admin', adminRoutes);
+app.use('/home', postHomeImg);
+app.use('/multimedia', postMultiImg);
 
 
 // catch 404 and forward to error handler

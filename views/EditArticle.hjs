@@ -31,7 +31,7 @@
 
     <!-- FORM -->
 
-    <form class="form-wrapper" action="/admin/article/update/{{article._id}}" method="post">
+    <form class="form-wrapper" action="/admin/article/update/{{article._id}}" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="author">Author</label>
         <input type="text" class="form-control" id="author" name="author" placeholder="Hayden or Mason?" value="{{ article.author }}">
@@ -43,6 +43,10 @@
       <div class="form-group">
         <label for="category">Category</label>
         <input type="text" class="form-control" id="category" name="category" placeholder="Enter Category" value="{{article.category}}">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control" name="blogImg" placeholder="Upload Image" value="{{article.imgFileName}}">
       </div>
       <div class="form-group">
         <label for="content">Content</label>

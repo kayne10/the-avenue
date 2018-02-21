@@ -51,6 +51,7 @@
     <!-- Article Content -->
     <div class="container">
       <div class="wrapper">
+        <img src="/images/{{article.imgFileName}}" alt="" class="img-responsive">
         <h1>{{article.title}}</h1><br>
         <span>By {{article.author}}</span><br>
         <span>Category: <span class="category-tags">{{article.category}}</span></span><br>
