@@ -65,18 +65,22 @@
             <li data-target="#myCarousel" data-slide-to="0"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
           </ol>
 
           <!-- Wrapper for slides -->
-          <!-- Not working -->
-          <!-- Try making your own instead of bootstrap. Captions can include title, author, and category -->
+          <!-- Include newest post as second item -->
           <div class="carousel-inner">
 
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="/images/{{images[0].filename}}" alt="">
-              </div>
+            <!-- Active Item should be static -->
+            <div class="item active">
+              <img src="/images/logoWOrange.jpg" alt="">
             </div>
+            {{#images}}
+            <div class="item">
+              <img src="/images/{{filename}}" alt="">
+            </div>
+            {{/images}}
 
           </div>
 

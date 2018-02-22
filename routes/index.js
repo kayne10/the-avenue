@@ -11,9 +11,15 @@ var Upload = require('../models/Upload');
 router.get('/', function(req, res, next) {
   Upload.find({}, function(err, images){
     if (err) {throw err}
+    var homeSlider = [];
+    images.forEach(function(image){
+      if (image.filename.includes('home')) {
+        homeSlider.push(image);
+      }
+    })
     res.render('index', {
       title: 'The Warm Up',
-      images: images
+      images: homeSlider
     });
   });
 });
@@ -42,7 +48,10 @@ router.get('/blog/:title', function(req, res, next) {
 });
 
 router.get('/multimedia', function(req, res, next) {
-  res.render('MultimediaView', { title: 'The Warm Up - Multimedia' });
+  Upload.find({}, function(err, images){
+    if (err) {throw err}
+    res.render('MultimediaView', { title: 'The Warm Up - Multimedia', images:images });
+  });
 });
 
 

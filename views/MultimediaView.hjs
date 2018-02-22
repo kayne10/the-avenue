@@ -47,6 +47,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+    <!-- Go for a good looking template -->
     <div class="container">
       <div class="episodes-container">
         <h1>Multimedia</h1>
@@ -62,10 +63,9 @@
           <div class="col-md-4">
             <h3>Pictures</h3>
             <ul>
-              <li>Picure 1</li>
-              <li>Picure 1</li>
-              <li>Picure 1</li>
-              <li>Picure 1</li>
+              {{#images}}
+                <li><img src="/images/{{filename}}" class="img-responsive" alt=""></li>
+              {{/images}}
             </ul>
           </div>
           <div class="col-md-4">

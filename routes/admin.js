@@ -59,7 +59,6 @@ router.get('/article/new', checkAuthentication,function(req, res, next){
 });
 
 // new blog post
-// Not saving file to disk correctly!!!!!!
 router.post('/article/new', checkAuthentication,function(req, res){
   upload(req, res, function(err) {
     if (err) {
