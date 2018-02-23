@@ -133,6 +133,18 @@ router.post('/home/img', function(req, res){
   });
 });
 
+//delete upload
+router.get('/delete/upload/:id', checkAuthentication,function(req, res){
+  const uploadId = req.params.id;
+  Upload.deleteOne({ _id: uploadId}, function(err){
+    if (!err) {
+      res.redirect('/admin');
+    } else {
+      res.send({'error':'File did not delete'});
+    }
+  });
+});
+
 // LOGIM AND SIGNUP AUTH
 router.get('/login', function(req, res, next){
   res.render('loginView', {

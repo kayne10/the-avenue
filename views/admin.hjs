@@ -96,7 +96,7 @@
                     <tr>
                       <td>{{originalname}}</td>
                       <td>
-                        <a href="#"><button class="btn btn-danger">Delete</button></a>
+                        <a href="/admin/delete/upload/{{_id}}"><button class="btn btn-danger">Delete</button></a>
                       </td>
                     </tr>
                     {{/mmImgs}}
@@ -106,9 +106,9 @@
             </div>
             <div class="col-md-6 home-slider">
               <h2>Home Page Image Slider</h2>
-              <p>Maximum of 5 photos.</p>
+              <p style="color: white;">Maximum of 5 photos.</p>
               <form class="file-upload" action="/home/img" method="post" enctype="multipart/form-data">
-                <input type="file" name="homeImg">
+                <input style="color:white;" type="file" name="homeImg">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
               <table class="table">
@@ -122,7 +122,7 @@
                     <tr>
                       <td>{{originalname}}</td>
                       <td>
-                        <a href="#"><button class="btn btn-danger">Delete</button></a>
+                        <a href="/admin/delete/upload/{{_id}}"><button class="btn btn-danger">Delete</button></a>
                       </td>
                     </tr>
                     {{/homeImgs}}

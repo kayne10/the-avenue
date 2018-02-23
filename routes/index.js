@@ -6,8 +6,7 @@ var Upload = require('../models/Upload');
 /* GET home page. */
 
 
-// DOES NOT DISPLAY PHOTOS CORRECTLY!!!!!
-// TRY RENDERING HOME IMAGES ONLY and NEWEST BLOG POST
+// TRY NEWEST BLOG POST
 router.get('/', function(req, res, next) {
   Upload.find({}, function(err, images){
     if (err) {throw err}
