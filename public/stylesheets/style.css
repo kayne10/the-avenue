@@ -60,6 +60,8 @@ label {
   background: black;
   color: white;
   margin-top: -2em;
+  width: 100%;
+  padding: 3em 3em;
 }
 .playlists {
   color: black;

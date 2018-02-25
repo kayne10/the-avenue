@@ -7,7 +7,8 @@ var Upload = require('../models/Upload');
 
 
 // TRY NEWEST BLOG POST
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
+  var newestPost = await Article.find().sort({_id:-1}).limit(1);
   Upload.find({}, function(err, images){
     if (err) {throw err}
     var homeSlider = [];
@@ -18,9 +19,10 @@ router.get('/', function(req, res, next) {
     })
     res.render('index', {
       title: 'The Warm Up',
-      images: homeSlider
+      images: homeSlider,
+      post: newestPost
     });
-  });
+  })
 });
 
 router.get('/episodes', function(req, res, next) {

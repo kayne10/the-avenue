@@ -40,11 +40,7 @@ router.post('/img', function(req, res){
     newImg.originalname = req.file.originalname;
     newImg.path = req.file.path;
     newImg.save();
-    res.json({
-      user: req.user,
-      uploadedFile: req.file,
-      savedFile: newImg
-    });
+    res.redirect('/admin')
   });
 });
 

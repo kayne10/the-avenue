@@ -84,7 +84,6 @@ router.post('/article/new', checkAuthentication,function(req, res){
     if (err) {
        return err;
     }
-    console.log(req.file);
     var newArticle = new Article();
     newArticle.title = req.body.title;
     newArticle.author = req.body.author;
@@ -94,7 +93,6 @@ router.post('/article/new', checkAuthentication,function(req, res){
     newArticle.imgOGName = req.file.originalname;
     newArticle.content = req.body.content;
     newArticle.save();
-    console.log(newArticle);
     res.redirect('/admin');
   });
 });
@@ -146,11 +144,7 @@ router.post('/home/img', function(req, res){
     newImg.originalname = req.file.originalname;
     newImg.path = req.file.path;
     newImg.save();
-    res.json({
-      user: req.user,
-      uploadedFile: req.file,
-      savedFile: newImg
-    });
+    res.redirect('/admin')
   });
 });
 
