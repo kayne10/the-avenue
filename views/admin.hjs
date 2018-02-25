@@ -106,9 +106,9 @@
             </div>
             <div class="col-md-6 home-slider">
               <h2>Home Page Image Slider</h2>
-              <p style="color: white;">Maximum of 5 photos.</p>
+              <p>Maximum of 5 photos.</p>
               <form class="file-upload" action="/home/img" method="post" enctype="multipart/form-data">
-                <input style="color:white;" type="file" name="homeImg">
+                <input type="file" name="homeImg">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
               <table class="table">

@@ -1,12 +1,12 @@
 html {
   max-width: 1280px;
-  background: rgba(0,0,0,1);
-  color: white;
+  background: rgba(255,255,255,1);
+  color: black;
   margin: 0 auto;
 }
 
 body {
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   /* font-family: 'Oswald', sans-serif; */
   font-family: 'Anton', sans-serif;
   /* font-family: 'Bitter', serif; */
@@ -103,7 +103,7 @@ label {
 }
 
 .blog-wrapper {
-  color: white;
+  color: black;
   width: 90%;
   height: auto;
   margin: 0 auto;
@@ -118,16 +118,24 @@ label {
   margin-top: 4em;
   margin-bottom: 2em;
 }
-
+.post-title{
+  text-align: center;
+}
 .category-tags {
   border: 2px black solid;
   border-radius: 10px;
   padding: 10px 10px;
 }
 
+.post-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2em 2em;
+}
+
 .auth-wrapper {
   margin-top: 2.5em;
-  color: white;
+  color: black;
 }
 
 .episodes-container {
@@ -156,10 +164,17 @@ footer {
   font-size: 26px;
 }
 
+.share {
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+
+
+}
 
 /* Admin Styling */
 .page-header {
-  color: white;
+  color: black;
 }
 .btn {
   letter-spacing: 1.5px;
@@ -179,7 +194,7 @@ footer {
   color: orange;
 }
 .table {
-  color: white;
+  color: black;
   font-family: 'Oswald', sans-serif;
 }
 tr {

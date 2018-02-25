@@ -49,7 +49,13 @@ router.get('/blog/:title', function(req, res, next) {
 router.get('/multimedia', function(req, res, next) {
   Upload.find({}, function(err, images){
     if (err) {throw err}
-    res.render('MultimediaView', { title: 'The Warm Up - Multimedia', images:images });
+    var multimediaSlider = [];
+    images.forEach(function(image){
+      if (image.filename.includes('multi')) {
+        multimediaSlider.push(image);
+      }
+    })
+    res.render('MultimediaView', { title: 'The Warm Up - Multimedia', images:multimediaSlider });
   });
 });
 

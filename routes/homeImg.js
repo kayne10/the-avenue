@@ -3,13 +3,12 @@ var router = express.Router();
 var passport = require('passport');
 var flash = require('connect-flash');
 var mongoose = require('mongoose');
-var multer = require('multer');
-var path = require('path');
-var fs = require('fs');
-var Grid = require("gridfs-stream");
 var conn = mongoose.connection;
+var multer = require('multer');
+var GridFsStorage = require('multer-gridfs-storage');
+var Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
-var gfs;
+var gfs = Grid(conn.db);
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
