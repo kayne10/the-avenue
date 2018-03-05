@@ -71,7 +71,7 @@
       <div id="disqus_thread"></div>
     </div>
     <!-- Footer with social media links and admin sign in -->
-    <footer>
+    <footer class="footer">
       <div class="row">
         <div class="col-md-9">
           <div class="social-media">

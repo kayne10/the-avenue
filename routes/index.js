@@ -29,13 +29,12 @@ router.get('/episodes', function(req, res, next) {
   res.render('EpisodesView', { title: 'The Warm Up - Episodes' });
 });
 
-router.get('/blog', function(req, res, next) {
-  Article.find({}, function(err, data){
-    if (err) {
-      throw err;
-    }
-    res.render('BlogView', { title: 'The Warm Up - Blog', articles: data });
-  });
+router.get('/blog', async function(req, res, next) {
+  const articles = await Article.find().sort({_id:-1})
+  if (articles.length === 0) {
+    res.render('BlogView', {title: 'The Warm Up - Blog', errMessage: 'Sorry, there are no new posts up at the moment.'}) 
+  }
+  res.render('BlogView', {title: 'The Warm Up - Blog', articles: articles})
 });
 
 router.get('/blog/:title', function(req, res, next) {

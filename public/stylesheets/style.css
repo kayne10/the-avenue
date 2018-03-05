@@ -1,5 +1,5 @@
 html {
-  max-width: 1280px;
+  max-width: 1300px;
   background: rgba(255,255,255,1);
   color: black;
   margin: 0 auto;
@@ -61,7 +61,7 @@ label {
   color: white;
   margin-top: -2em;
   width: 100%;
-  padding: 3em 3em;
+  padding: 0;
 }
 .playlists {
   color: black;
@@ -85,8 +85,9 @@ label {
 }
 
 .info-section {
-  background-color: lightgrey;
+  background-color: rgb(219, 114, 8);
   padding: 2em 1em;
+  width: 100%;
 }
 .info-section p {
   color: black;
@@ -114,8 +115,8 @@ label {
 .wrapper {
   white-space: pre-wrap;
   color: black;
-  background-color: lightgrey;
-  border: white 2px solid;
+  background-color: rgb(255,255,255);
+  border: rgb(219, 114, 8) 2px solid;
   border-radius: 10px;
   margin-top: 4em;
   margin-bottom: 2em;
@@ -144,16 +145,19 @@ label {
   margin-top: 3.5em;
   color: orange;
   text-align: center;
+  height: 800px;
 }
 
-footer {
+.footer {
   width: 100%;
   background: black;
   color: white;
   text-align: center;
   margin: 0 auto;
-  height: 100px;
-  padding: 1.5em 1.5em;
+  margin-left: -1em;
+  height: 10em;
+  padding: 1em 0;
+
 }
 .social-media {
   width: 60%;
@@ -219,10 +223,10 @@ tr {
 }
 
 #disqus_thread {
-  background-color: lightgrey;
+  background-color: rgb(255, 255, 255);
   color: black;
   padding: 2em 2em;
-  border: white 2px solid;
+  border: rgb(219, 114, 8) 2px solid;
   border-radius: 10px;
 }
 

@@ -55,10 +55,12 @@
 
     <!-- Header with playlists container and jumbotron -->
     <div class="row action-wrapper" id="index-content">
-      <div class="col-md-4 playlists">
+      <!-- Soundcloud playlist -->
+      <div class="col-md-3 playlists">
         <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/163983001&amp;color=%23ff9900&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
       </div>
-      <div class="col-md-8 my-carousel">
+      <!-- Carousel -->
+      <div class="col-md-6 my-carousel">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -94,7 +96,6 @@
             {{/images}}
 
           </div>
-
         </div>
 
           <!-- Left and right controls -->
@@ -106,6 +107,10 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
           </a>
+        </div>
+        <!-- Spotify Playlist -->
+        <div class="col-md-3 playlists">
+          <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZEVXcQZ0yM0oT6EY" width="100%" height="450" frameborder="0" allowtransparency="true"></iframe>
         </div>
       </div>
     </div>
@@ -122,10 +127,9 @@
         </div>
       </div>
     </div>
-    <!-- Podcast container -->
 
     <!-- Footer with social media links and admin sign in -->
-    <footer>
+    <footer class="footer">
       <div class="row">
         <div class="col-md-9">
           <div class="social-media">
