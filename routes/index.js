@@ -7,8 +7,8 @@ var Upload = require('../models/Upload');
 
 
 // TRY NEWEST BLOG POST
-router.get('/', async function(req, res, next) {
-  var newestPost = await Article.find().sort({_id:-1}).limit(1);
+router.get('/', function(req, res, next) {
+  var newestPost = Article.find().sort({_id:-1}).limit(1);
   Upload.find({}, function(err, images){
     if (err) {throw err}
     var homeSlider = [];
@@ -17,7 +17,7 @@ router.get('/', async function(req, res, next) {
         homeSlider.push(image);
       }
     })
-    res.render('index', {
+    res.render('comingSoon', {
       title: 'The Warm Up',
       images: homeSlider,
       post: newestPost
@@ -29,10 +29,10 @@ router.get('/episodes', function(req, res, next) {
   res.render('EpisodesView', { title: 'The Warm Up - Episodes' });
 });
 
-router.get('/blog', async function(req, res, next) {
-  const articles = await Article.find().sort({_id:-1})
+router.get('/blog', function(req, res, next) {
+  const articles = Article.find().sort({_id:-1})
   if (articles.length === 0) {
-    res.render('BlogView', {title: 'The Warm Up - Blog', errMessage: 'Sorry, there are no new posts up at the moment.'}) 
+    res.render('BlogView', {title: 'The Warm Up - Blog', errMessage: 'Sorry, there are no new posts up at the moment.'})
   }
   res.render('BlogView', {title: 'The Warm Up - Blog', articles: articles})
 });

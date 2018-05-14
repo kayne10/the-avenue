@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Warm Up Avenue - Coming Soon</title>
+    <!-- bootstrap cdn css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Oswald" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- jQuery is required for Bootsrtap JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js">
+
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="cd-main-nav">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" disabled>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/" disabled>The Warm Up</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="links" href="/episodes">Episodes</a></li>
+              <li><a class="links" href="/blog">Blog</a></li>
+              <li><a class="links" href="/multimedia">Multimedia</a></li>
+              <!-- <li><a class="links" href="/music">Music</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/subscribe">Subscribe</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+              </li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <section class="jumbotron text-center">
+      <div class="container">
+
+      </div>
+    </section>
+
+    <h1 style="text-align:center">Coming Soon</h1>
+
+    <!-- Info section -->
+    <div class="row info-section">
+      <div class="intro">
+        <div class="col-md-6">
+          <p>The Warm Up Podcast is an emerging hub for pop culture and everything that surrounds the world of sports, but has nothing to do with box scores, top 10 highlights or long-winded analytics.</p>
+        </div>
+        <div class="col-md-6">
+          <p>Enjoy our discussions with a diverse set of guests -- from friends to colleagues to industry culture pushers -- through the eyes of three recent college graduates and professionals</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer with social media links and admin sign in -->
+    <footer class="footer">
+      <div class="row">
+        <div class="col-md-9">
+          <h3>Follow us</h3>
+          <div class="social-media">
+            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://soundcloud.com/thewarmuppod"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a href="/admin/login">Admin Panel</a>
+        </div>
+        Copyright &copy; 2017 theavenue.com
+      </div>
+    </footer>
+
+  </body>
+</html>

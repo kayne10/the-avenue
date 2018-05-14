@@ -17,6 +17,11 @@ label {
   color: white;
 }
 
+a {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .navbar-inverse {
   background: rgba(0,0,0,0.75);
   border: none;
