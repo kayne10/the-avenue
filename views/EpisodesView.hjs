@@ -46,7 +46,11 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <section class="jumbotron text-center">
+      <div class="container">
 
+      </div>
+    </section>
     <div class="container">
       <div class="episodes-container">
         <h1>Episodes</h1>

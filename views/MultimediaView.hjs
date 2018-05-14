@@ -86,17 +86,17 @@
     <footer class="footer">
       <div class="row">
         <div class="col-md-9">
+          <h3>Follow us</h3>
           <div class="social-media">
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+            <a href="https://soundcloud.com/thewarmuppod"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
           </div>
-          Copyright &copy; 2017 theavenue.com
         </div>
         <div class="col-md-3">
           <a href="/admin/login">Admin Panel</a>
         </div>
+        Copyright &copy; 2017 theavenue.com
       </div>
     </footer>
 

@@ -14,17 +14,21 @@ var validator = require('express-validator');
 var config = require('./config/main');
 var dbUrl = config.database;
 
-// Use native Node promises
+//db options
+let options = {
+                server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } }
+              };
+//connect to mongo
 mongoose.Promise = global.Promise;
+mongoose.connect(dbUrl, options);
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection Error:'));
+db.once('connected', function() {
+  console.log('mongoDB is connected');
+});
 
-mongoose.connect(dbUrl, function(err, res){
-  if(err) {
-    console.log('DB CONNECTION FAILED: '+err);
-  }
-  else {
-    console.log('DB CONNECTION SUCCESS: '+dbUrl);
-  }
-})
+
 //Load passport middleware
 require('./config/passport');
 

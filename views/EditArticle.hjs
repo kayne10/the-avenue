@@ -45,6 +45,7 @@
         <input type="text" class="form-control" id="category" name="category" placeholder="Enter Category" value="{{article.category}}">
       </div>
       <div class="form-group">
+        <p>*Unfortunately, this will not edit the image. You have to delete and make a new blog post.</p>
         <label for="image">Image</label>
         <input type="file" class="form-control" name="blogImg" placeholder="Upload Image" value="{{article.imgFileName}}">
       </div>

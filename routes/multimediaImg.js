@@ -6,10 +6,7 @@ var mongoose = require('mongoose');
 var multer = require('multer');
 var path = require('path');
 var fs = require('fs');
-var Grid = require("gridfs-stream");
-var conn = mongoose.connection;
-Grid.mongo = mongoose.mongo;
-var gfs;
+
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {

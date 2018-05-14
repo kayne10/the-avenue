@@ -193,6 +193,7 @@ label {
 .form-control {
   letter-spacing: 1.5px;
 }
+
 .manager {
   height: auto;
 }
@@ -209,14 +210,20 @@ tr {
 .articles {
   overflow-y: scroll;
   max-height: 400px;
+  margin: -1em;
+  padding: 2em;
+  margin-bottom: 1.5em;
+  background-color: rgba(152, 157, 165, 0.5);
 }
 .home-slider {
   overflow-y: scroll;
   max-height: 400px;
+  background-color: rgba(152, 157, 165, 0.5);
 }
 .multimedia {
   overflow-y: scroll;
   max-height: 400px;
+  background-color: rgba(152, 157, 165, 0.5);
 }
 .file-upload {
   display: flex;

@@ -7,10 +7,6 @@ var path = require('path');
 var fs = require('fs');
 var conn = mongoose.connection;
 var multer = require('multer');
-var GridFsStorage = require('multer-gridfs-storage');
-var Grid = require('gridfs-stream');
-Grid.mongo = mongoose.mongo;
-var gfs = Grid(conn.db);
 
 // file system storage
 var storage = multer.diskStorage({
@@ -22,24 +18,6 @@ var storage = multer.diskStorage({
   }
 });
 var upload = multer({ storage: storage }).single('blogImg');
-
-//mongodb storage
-// var storage = GridFsStorage({
-//         gfs : gfs,
-//         filename: function (req, file, cb) {
-//             var datetimestamp = Date.now();
-//             cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
-//         },
-//         /** With gridfs we can store aditional meta-data along with the file */
-//         metadata: function(req, file, cb) {
-//             cb(null, { originalname: file.originalname });
-//         },
-//         root: 'uploads' //root name for collection to store files into
-//     });
-//
-//     var upload = multer({ //multer settings for single upload
-//         storage: storage
-//     }).single('blogImg');
 
 
 var Article = require('../models/Article');
