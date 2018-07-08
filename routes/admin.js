@@ -140,14 +140,14 @@ router.get('/delete/upload/:id', checkAuthentication,function(req, res){
 
 // LOGIM AND SIGNUP AUTH
 router.get('/login', function(req, res, next){
-  res.render('loginView', {
+  res.render('LoginView', {
     title: 'The Warm up - Admin Panel',
     error: req.flash('error')
   })
 });
 
 router.get('/signup', function(req, res, next){
-  res.render('signupView', {
+  res.render('SignUpView', {
     title: 'The Warm up - Admin Panel',
     error: req.flash('error')
   })

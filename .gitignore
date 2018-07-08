@@ -3,3 +3,8 @@ node_modules/
 
 *.DS_STORE
 *.pem
+
+env
+*.pyc
+__pycache__
+
