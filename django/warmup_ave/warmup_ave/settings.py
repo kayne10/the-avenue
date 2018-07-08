@@ -82,6 +82,14 @@ DATABASES = {
     }
 }
 
+# MONGO??
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'the-warm-up',
+#    }
+# }
+
 # POSTGRES DATABASE
 
 
