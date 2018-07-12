@@ -1,0 +1,265 @@
+html {
+  max-width: 1300px;
+  background: rgba(255,255,255,1);
+  color: black;
+  margin: 0 auto;
+}
+
+body {
+  /* background: rgba(0, 0, 0, 0.5); */
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Anton', sans-serif;
+  /* font-family: 'Bitter', serif; */
+  letter-spacing: 1px;
+}
+
+label {
+  color: white;
+}
+
+a {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.navbar-inverse {
+  background: rgba(0,0,0,0.75);
+  border: none;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+.navbar-inverse .navbar-brand:hover {
+  color: orange;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: orange;
+}
+.navbar-inverse .navbar-toggle {
+  background: black;
+  color: white;
+}
+
+.jumbotron {
+  background: url('/img/header.jpg') no-repeat center center;
+  height: 500px;
+  margin-top: -1.5em;
+}
+
+
+.panel-default {
+  /* overflow-y: scroll; */
+  height: auto;
+  max-height: 400px;
+  padding: 0 40px;
+  background-color: black;
+  border: none;
+}
+
+
+.action-wrapper {
+  background: black;
+  color: white;
+  margin-top: -2em;
+  width: 100%;
+  padding: 0;
+}
+.playlists {
+  color: black;
+  text-align: center;
+  background-color: orange;
+  padding: 2em 1em;
+  /* padding: 2em 0; */
+}
+.my-carousel {
+  padding: 2em 0;
+}
+
+.intro {
+  color: white;
+  padding: 1em 1em;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  font-size: 1.5em;
+  font-family: 'Oswald', sans-serif;
+}
+
+.info-section {
+  background-color: rgb(219, 114, 8);
+  padding: 2em 1em;
+  width: 100%;
+}
+.info-section p {
+  color: black;
+}
+/*  Carousel */
+.carousel-inner img {
+  margin: 0 auto;
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+.blog-header {
+  margin-top: 5em;
+}
+
+.blog-wrapper {
+  color: black;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.wrapper {
+  white-space: pre-wrap;
+  color: black;
+  background-color: rgb(255,255,255);
+  border: rgb(219, 114, 8) 2px solid;
+  border-radius: 10px;
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+.post-title{
+  text-align: center;
+}
+.category-tags {
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.post-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2em 2em;
+}
+
+.auth-wrapper {
+  margin-top: 2.5em;
+  color: black;
+}
+
+.episodes-container {
+  margin-top: 3.5em;
+  color: orange;
+  text-align: center;
+  height: 800px;
+}
+
+.footer {
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-left: -1em;
+  height: 10em;
+  padding: 1em 0;
+
+}
+.social-media {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2em 2em;
+  justify-content: space-between;
+}
+.social-media a {
+  text-decoration: none;
+  font-size: 26px;
+}
+
+.share {
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+
+
+}
+
+/* Admin Styling */
+.page-header {
+  color: black;
+}
+.btn {
+  letter-spacing: 1.5px;
+}
+.form-wrapper{
+  width: 60%;
+  margin: 0 auto;
+  height: auto;
+}
+.form-control {
+  letter-spacing: 1.5px;
+}
+
+.manager {
+  height: auto;
+}
+.manager h2 {
+  color: orange;
+}
+.table {
+  color: black;
+  font-family: 'Oswald', sans-serif;
+}
+tr {
+  height: 2em;
+}
+.articles {
+  overflow-y: scroll;
+  max-height: 400px;
+  margin: -1em;
+  padding: 2em;
+  margin-bottom: 1.5em;
+  background-color: rgba(152, 157, 165, 0.5);
+}
+.home-slider {
+  overflow-y: scroll;
+  max-height: 400px;
+  background-color: rgba(152, 157, 165, 0.5);
+}
+.multimedia {
+  overflow-y: scroll;
+  max-height: 400px;
+  background-color: rgba(152, 157, 165, 0.5);
+}
+.file-upload {
+  display: flex;
+}
+
+#disqus_thread {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 2em 2em;
+  border: rgb(219, 114, 8) 2px solid;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .jumbotron {
+    background-image: url('../images/logoWOrange.jpg');
+  }
+  .intro {
+    width: 90%;
+    font-size: 1.2em;
+  }
+}
+
+/*.side-nav-fixed {
+  position: fixed;
+  height: auto;
+}*/
+
+
+/*@media (min-width: 1200px)
+bootstrap.min.css:6
+.container {
+    max-width: 1140px;
+}*/
