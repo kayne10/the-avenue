@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block body %}
-  <section class="jumbotron text-center">
+  <section class="jumbotron text-center" style="background: url('{% static 'web/img/header.jpg' %}') no-repeat center center;
+  height: 500px;
+  margin-top: -1.5em;">
     <div class="container">
 
     </div>
@@ -43,8 +45,8 @@
               <img src="{% static 'web/img/header.jpg' %}" height="455px" alt="" />
             {% endif %}
             <div class="carousel-caption d-none d-md-block">
-              <h5>Newest Blog Post: {{article.title}}</h5>
-              <p>By {{article.author}}</p>
+              <h5>Newest Blog Post: {{article.title|title}}</h5>
+              <p>By {{article.author|title}}</p>
             </div>
           </div>
 

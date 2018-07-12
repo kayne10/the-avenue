@@ -17,10 +17,10 @@ label {
   color: white;
 }
 
-a {
+/* a {
   cursor: not-allowed;
   pointer-events: none;
-}
+} */
 
 .navbar-inverse {
   background: rgba(0,0,0,0.75);
@@ -45,7 +45,7 @@ a {
 }
 
 .jumbotron {
-  background: url('/img/header.jpg') no-repeat center center;
+  background: url('img/header.jpg') no-repeat center center;
   height: 500px;
   margin-top: -1.5em;
 }

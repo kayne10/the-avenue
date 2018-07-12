@@ -5,7 +5,7 @@ from django.db.models import Q
 
 # Create your views here.
 def index(request):
-    most_recent_article = Article.objects.all().order_by('-created_at')[0]
+    most_recent_article = Article.objects.all().order_by('-updated_at')[0]
     playlist = Track.objects.all()
     slides = HomeImage.objects.all()
     return render(request, 'web/index.html', {
@@ -15,7 +15,7 @@ def index(request):
     })
 
 def blog(request):
-    articles = Article.objects.all().order_by('-created_at')
+    articles = Article.objects.all().order_by('-updated_at')
     return render(request, 'web/blog.html', {'articles': articles})
 
 def search_blog_by_tag(request, tag):
