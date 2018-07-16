@@ -31,7 +31,7 @@
               {% if blog.tags %}
                 <ul style="list-style:none; display:flex; justify-content:space-around; width:25%;">
                   {% for tag in blog.tags %}
-                    <a href="{% url 'webmanager:search' tag %}"><li>{{tag|lower}}</li></a>
+                    <a href="{% url 'webmanager:search' tag %}"><li class="category-tags">{{tag|lower}}</li></a>
                   {% endfor %}
                 </ul>
               {% endif %}

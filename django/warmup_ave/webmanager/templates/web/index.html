@@ -71,21 +71,23 @@
         </a>
       </div>
       <!-- Playlist -->
-      <div class="col-md-3 playlists">
+      <div class="col-md-3 playlists" style="overflow:scroll;height:550px">
         <h2>Track Playlist</h2>
-        {% for track in playlist %}
-          <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <p>{{ track.name }}: </p>
-            </div>
-            <div class="col-xs-3 col-sm-9 col-md-9">
-              <audio controls>
-                <source src="{{ track.audio_file.url }}" type="audio/mpeg">
-                <p>Your browser does not support this audio.</p>
-              </audio>
-            </div>
-          </div>
-        {% endfor %}
+        <ol>
+          {% for track in playlist %}
+            <li><div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-3">
+                <p>{{ track.name }}: </p>
+              </div>
+              <div class="col-xs-3 col-sm-9 col-md-9">
+                <audio style="width:150px;margin-left:-2em;" controls>
+                  <source src="{{ track.audio_file.url }}" type="audio/mpeg" />
+                  <p>Your browser does not support this audio.</p>
+                </audio>
+              </div>
+            </div></li>
+          {% endfor %}
+        </ol>
       </div>
     </div>
   </div>

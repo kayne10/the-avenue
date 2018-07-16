@@ -14,12 +14,13 @@
       <span>By {{article.author|title}}</span><br>
       <ul style="list-style:none; display:flex; justify-content:space-around; width:25%;">
         {% for tag in article.tags %}
-          <a href="{% url 'webmanager:search' tag %}"><li>{{tag|lower}}</li></a>
+          <a href="{% url 'webmanager:search' tag %}"><li class="category-tags">{{tag|lower}}</li></a>
         {% endfor %}
       </ul>
       <span>Posted on {{article.dateSent}}</span><br>
       <p class="post-content">{{article.content}}</p>
       <!-- sharing options -->
+      <h3>Share:</h3>
       <div class="share">
         <span class='st_facebook_large' displayText='Facebook'></span>
         <span class='st_twitter_large' displayText='Tweet'></span>
