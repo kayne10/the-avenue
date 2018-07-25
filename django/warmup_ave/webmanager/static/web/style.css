@@ -250,6 +250,9 @@ tr {
     width: 90%;
     font-size: 1.2em;
   }
+  footer {
+    height: auto;
+  }
 }
 
 /*.side-nav-fixed {

@@ -18,7 +18,8 @@ import codecs
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # read credentials from config file
-data = json.load(codecs.open('./warmup_ave/creds.json', 'r', 'utf-8-sig'))
+# keept commented out for docker containerization
+#data = json.load(codecs.open('./warmup_ave/creds.json', 'r', 'utf-8-sig'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -98,10 +99,10 @@ WSGI_APPLICATION = 'warmup_ave.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': data['pgName'],
-        'USER': data['pgUser'],
-        'PASSWORD': data['pgPassword'],
-        'HOST': 'localhost',
+        'NAME': 'postgres', # for docker: postgres , for non-docker: data[pgName]
+        'USER': 'postgres', # for docker: postgres, for non-docker: data[pgUser]
+        # 'PASSWORD': data['pgPassword'], # for docker: no password needed, for non-docker: data[pgPassword]
+        'HOST': 'db', # for docker: db, for locally: localhost, for AWS:
         'PORT': '5432',
     }
 }

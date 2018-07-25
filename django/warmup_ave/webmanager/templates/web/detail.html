@@ -17,7 +17,7 @@
           <a href="{% url 'webmanager:search' tag %}"><li class="category-tags">{{tag|lower}}</li></a>
         {% endfor %}
       </ul>
-      <span>Posted on {{article.dateSent}}</span><br>
+      <span>Posted on {{article.created_at}}</span><br>
       <p class="post-content">{{article.content}}</p>
       <!-- sharing options -->
       <h3>Share:</h3>

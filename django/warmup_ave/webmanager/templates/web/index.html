@@ -73,21 +73,21 @@
       <!-- Playlist -->
       <div class="col-md-3 playlists" style="overflow:scroll;height:550px">
         <h2>Track Playlist</h2>
-        <ol>
+        <ul style="list-style:none;">
           {% for track in playlist %}
             <li><div class="row">
               <div class="col-xs-3 col-sm-3 col-md-3">
                 <p>{{ track.name }}: </p>
               </div>
               <div class="col-xs-3 col-sm-9 col-md-9">
-                <audio style="width:150px;margin-left:-2em;" controls>
+                <audio style="height:75px;" controls>
                   <source src="{{ track.audio_file.url }}" type="audio/mpeg" />
                   <p>Your browser does not support this audio.</p>
                 </audio>
               </div>
             </div></li>
           {% endfor %}
-        </ol>
+        </ul style="list-style:none;">
       </div>
     </div>
   </div>
@@ -113,6 +113,7 @@
               });
           });
       });
+
   </script>
 
 {% endblock %}
