@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Warm Up Avenue</title>
+    {% load staticfiles %}
+    <!--<link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>-->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/style.css' %}"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="{% static 'gift/js/main.js' %}"></script> -->
+
+    <!-- Share this scripts -->
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js?publisher=37361ad7-20a5-4bd8-8f47-e2f48ef59fd4"></script>
+    <script type="text/javascript">stLight.options({publisher: "37361ad7-20a5-4bd8-8f47-e2f48ef59fd4", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+</head>
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="cd-main-nav">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'webmanager:index' %}">The Warm Up</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="links" href="/episodes">Episodes</a></li>
+              <li><a class="links" href="/blog">Blog</a></li>
+              <!-- <li><a class="links" href="/multimedia">Multimedia</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <footer class="footer">
+      <div class="row">
+        <div class="col-md-9">
+          <h3>Follow us</h3>
+          <div class="social-media">
+            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://soundcloud.com/thewarmuppod"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a href="/admin">Admin Panel</a>
+        </div>
+        Copyright &copy; <span id="cr"></span> warmupave.com
+      </div>
+    <script type="text/javascript">
+      var d = new Date();
+      document.getElementById('cr').innerHTML = d.getFullYear();
+    </script>
+</body>
+</html>
