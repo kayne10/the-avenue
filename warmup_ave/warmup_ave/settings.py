@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'warmup_ave.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': data['pgName'], # for docker: postgres , for non-docker: data[pgName]
+        'NAME': data['pgName'], # for docker: avenue , for non-docker: data[pgName]
         'USER': data['pgUser'], # for docker: postgres, for non-docker: data[pgUser]
         'PASSWORD': data['pgPassword'], # for docker: no password needed, for non-docker: data[pgPassword]
         'HOST': 'localhost', # for docker: db, for locally: localhost, for AWS:

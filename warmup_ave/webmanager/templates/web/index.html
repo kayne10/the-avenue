@@ -38,25 +38,35 @@
             <img src="{% static 'web/img/logoWOrange.jpg' %}" height="455px" alt="">
           </div>
 
-          <div class="item">
-            {% if article.image %}
-              <img src="{{ article.image.url }}" height="455px" alt="" />
-            {% else %}
-              <img src="{% static 'web/img/header.jpg' %}" height="455px" alt="" />
-            {% endif %}
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Newest Blog Post: {{article.title|title}}</h5>
-              <p>By {{article.author|title}}</p>
-            </div>
-          </div>
-
-          <!-- home image slider -->
-          {% for slide in slides %}
+          {% if article %}
             <div class="item">
-              <img src="{{ slide.image.url }}" height="455px" alt="" />
+              {% if article.image %}
+                <img src="{{ article.image.url }}" height="455px" alt="" />
+              {% else %}
+                <img src="{% static 'web/img/header.jpg' %}" height="455px" alt="" />
+              {% endif %}
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Newest Blog Post: {{article.title|title}}</h5>
+                <p>By {{article.author|title}}</p>
+              </div>
             </div>
-          {% endfor %}
+          {% endif %}
 
+          {% if slides %}
+            <!-- home image slider -->
+            {% for slide in slides %}
+              <div class="item">
+                <img src="{{ slide.image.url }}" height="455px" alt="" />
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="item">
+              <img src="{% static 'web/img/logoWOrange.jpg' %}" alt="">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Upload more images!</h5>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
 
@@ -73,21 +83,25 @@
       <!-- Playlist -->
       <div class="col-md-3 playlists" style="overflow:scroll;height:550px">
         <h2>Track Playlist</h2>
-        <ul style="list-style:none;">
-          {% for track in playlist %}
-            <li><div class="row">
-              <div class="col-xs-3 col-sm-3 col-md-3">
-                <p>{{ track.name }}: </p>
-              </div>
-              <div class="col-xs-3 col-sm-9 col-md-9">
-                <audio style="height:75px;" controls>
-                  <source src="{{ track.audio_file.url }}" type="audio/mpeg" />
-                  <p>Your browser does not support this audio.</p>
-                </audio>
-              </div>
-            </div></li>
-          {% endfor %}
-        </ul style="list-style:none;">
+        {% if playlist %}
+          <ul style="list-style:none;">
+            {% for track in playlist %}
+              <li><div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                  <p>{{ track.name }}: </p>
+                </div>
+                <div class="col-xs-3 col-sm-9 col-md-9">
+                  <audio style="height:75px;" controls>
+                    <source src="{{ track.audio_file.url }}" type="audio/mpeg" />
+                    <p>Your browser does not support this audio.</p>
+                  </audio>
+                </div>
+              </div></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          Upload songs in Admin panel!
+        {% endif %}
       </div>
     </div>
   </div>

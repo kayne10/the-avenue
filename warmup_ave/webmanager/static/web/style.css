@@ -22,6 +22,30 @@ label {
   pointer-events: none;
 } */
 
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+
+audio::-internal-media-controls-download-button {
+    display:none;
+}
+ 
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+
 .navbar-inverse {
   background: rgba(0,0,0,0.75);
   border: none;
@@ -42,6 +66,11 @@ label {
 .navbar-inverse .navbar-toggle {
   background: black;
   color: white;
+}
+
+.btn-avenue:hover {
+  color: white;
+  background-color: orange;
 }
 
 .jumbotron {
@@ -139,6 +168,7 @@ label {
   width: 90%;
   margin: 0 auto;
   padding: 2em 2em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .auth-wrapper {
@@ -155,6 +185,7 @@ label {
 
 .footer {
   width: 100%;
+  height: 300px;
   background: black;
   color: white;
   text-align: center;
@@ -249,9 +280,6 @@ tr {
   .intro {
     width: 90%;
     font-size: 1.2em;
-  }
-  footer {
-    height: auto;
   }
 }
 

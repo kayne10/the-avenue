@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Article, Track, HomeImage
+from .models import Article, Track, HomeImage, MultimediaObject
 from django.db.models import Q
 
 
@@ -7,7 +7,7 @@ from django.db.models import Q
 def index(request):
     most_recent_article = Article.objects.all().order_by('-updated_at')[0]
     playlist = Track.objects.all()
-    slides = HomeImage.objects.all()
+    slides = HomeImage.objects.all().order_by('-id')
     return render(request, 'web/index.html', {
         'article': most_recent_article,
         'playlist': playlist,
@@ -31,4 +31,13 @@ def episodes(request):
 
 # maybe included, maybe not
 def multimedia(request):
-    return render(request, 'web/multimedia.html')
+    count = MultimediaObject.objects.count()
+    youtube_videos = MultimediaObject.objects.filter(youtube_url__icontains='youtube')
+    uploaded_videos = MultimediaObject.objects.filter(Q(video__icontains='mp4')|Q(video__icontains='mov'))
+    uploaded_images = MultimediaObject.objects.filter(Q(image__icontains='jpg')|Q(image__icontains='png'))
+    return render(request, 'web/multimedia.html', {
+        'count': count,
+        'y_videos': youtube_videos,
+        'u_videos': uploaded_videos,
+        'images': uploaded_images,
+    })

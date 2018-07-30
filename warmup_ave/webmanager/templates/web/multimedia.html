@@ -1,0 +1,55 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block body %}
+
+  <section class="jumbotron text-center">
+    <div class="container">
+
+    </div>
+  </section>
+
+  <div class="container-fluid">
+    <h1>Multimedia</h1>
+    <div class="multimedia-wrapper">
+      {% if count > 0 %}
+        <div class="row">
+          <h3 style="text-align:center">Videos</h3>
+          <hr>
+          {% if y_videos %}
+            {% for v in y_videos %}
+              <div class="col-md-6">
+                <iframe src="{{ v.youtube_url }}" width="560" height="315"></iframe>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          {% if u_videos %}
+            {% for v in u_videos %}
+
+              <video width="400" type="video/mp4" controls>
+                <source src="{{ v.video.url }}"></source>
+              </video>
+
+            {% endfor %}
+          {% endif %}
+        </div>
+        <hr>
+        <div class="row">
+          <h3 style="text-align:center">Images</h3>
+
+          {% if images %}
+            {% for i in images %}
+              <img src="{{ i.image.url }}" alt="">
+            {% endfor %}
+          {% else %}
+            No images to show at this moment...
+          {% endif %}
+
+        </div>
+      {% else %}
+        Nothing to show at this moment...
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

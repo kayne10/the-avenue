@@ -43,3 +43,12 @@ class HomeImage(models.Model):
 
     def __str__(self):
         return self.name + ' - ' + str(self.image)
+
+class MultimediaObject(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.FileField(upload_to='multimedia/images', blank=True)
+    video = models.FileField(upload_to='multimedia/videos', blank=True)
+    youtube_url = models.CharField(max_length=355, blank=True)
+
+    def __str__(self):
+        return self.name
