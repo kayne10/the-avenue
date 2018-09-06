@@ -25,7 +25,7 @@ data = json.load(codecs.open('./warmup_ave/creds.json', 'r', 'utf-8-sig'))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r(fzz^oe1g_qhc-wpys2%*%5h0l$^y@w1_+9$kl0$8m-4vbmbn'
+SECRET_KEY = data['secretKey']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
