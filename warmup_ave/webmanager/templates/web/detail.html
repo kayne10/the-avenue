@@ -18,7 +18,9 @@
         {% endfor %}
       </ul>
       <span>Posted on {{article.created_at}}</span><br>
-      <p class="post-content" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">{{article.content}}</p>
+      <p class="post-content" style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">
+        {{article.content|safe}}
+      </p>
       <!-- sharing options -->
       <h3 style="text-align:center">Share:</h3>
       <div class="share">

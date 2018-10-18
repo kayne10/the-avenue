@@ -22,6 +22,7 @@ from webmanager import views
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^', include('webmanager.urls')),
+    url('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
